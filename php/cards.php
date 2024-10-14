@@ -1,6 +1,6 @@
 <?php
-
-
+// Conexión a la base de datos
+include 'conexion.php';
 
 // Comprobar la conexión
 if ($conn->connect_error) {
