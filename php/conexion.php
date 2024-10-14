@@ -4,7 +4,6 @@ $servername = "ecommerce2k24-server.mysql.database.azure.com";
 $username = "gxnxubadse";
 $password = "qKDe0VUjZ$2hTrW9";
 $dbname = "tienda_online";
-$ssl_cert_path = __DIR__ . "/SSL/DigiCertGlobalRootCA.crt.pem";  // Ruta completa al certificado
 
 // Habilitar reportes de errores de MySQLi para depuración
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
