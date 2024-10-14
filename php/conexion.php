@@ -1,8 +1,8 @@
 <?php
 // conexion.php
 $servername = "tiendaenlinea-server.mysql.database.azure.com";
-$username = "ushfdkwvxu";
-$password = "Tindaonline2024";
+$username = "lqicchkfqo";
+$password = "nPOsG7KP$Zx9Su9d";
 $dbname = "tienda_online";
 $ssl_cert_path = __DIR__ . "/SSL/DigiCertGlobalRootCA.crt.pem";  // Ruta completa al certificado
 
