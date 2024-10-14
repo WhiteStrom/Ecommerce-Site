@@ -1,6 +1,6 @@
 <?php
 // conexion.php
-$servername = "tiendaenlinea-server.mysql.database.azure.com";
+$servername = "ecommerce2k24-server.mysql.database.azure.com";
 $username = "gxnxubadse";
 $password = "qKDe0VUjZ$2hTrW9";
 $dbname = "tienda_online";
