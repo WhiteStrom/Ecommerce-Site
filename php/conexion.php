@@ -13,7 +13,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $conn = mysqli_init();
 
 // Verificar si la configuración SSL se establece correctamente
-if (!mysqli_ssl_set($conn, NULL, NULL, $ssl_cert_path, NULL, NULL)) {
+if (!mysqli_ssl_set($conn, NULL, NULL, "/var/www/html/DigiCertGlobalRootCA.crt.pem" , NULL, NULL)) {
     die(json_encode(['success' => false, 'error' => "Falló la configuración SSL"]));
 }
 
