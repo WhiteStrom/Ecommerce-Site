@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Catálogo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/administracion.css">
+    <link rel="stylesheet" href="../css/cardsAdmin.css">
+
+    <script src="../js/main.js" defer></script>
+    <script src="../js/AdminCatalog.js" defer></script>
+    <script src="../js/rainfall.js" defer></script>
+    
+</head>
+<body>
+    <canvas id="rainfall"></canvas>
+    <header>
+        <h1>Panel de Administrador</h1>
+        <nav>
+            <ul>
+                <li><a href="../admin/index.html">Inicio Administración</a></li>
+                <li><a href="../admin/view_orders.html">Ver Registros</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Modificar Catálogo</h2>
+        <div class="container">
+            <!-- Sección del Catálogo de Productos -->
+            <section class="form-section">
+                <h2>Agregar Productos</h2>
+                <form id="formProducto" onsubmit="event.preventDefault(); agregarProducto();">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" required><br>
+
+                    <label for="descripcion">Descripción:</label>
+                    <textarea id="descripcion" required></textarea><br>
+
+                    <label for="precio">Precio:</label>
+                    <input type="number" id="precio" required><br>
+
+                    <label for="imagen">URL de la Imagen:</label>
+                    <input type="text" id="imagen" required><br>
+
+                    <button type="submit">Agregar Producto</button>
+                </form>
+
+            </section>
+
+            <aside class="catalog-section"> 
+                <h2>Catálogo de Productos Actual</h2>   
+                <div class="cards" id="card-container">
+                    
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Modulo para Editar Productos -->
+
+    <div id="editarProducto" class="modal" style="display:none;">
+        <div class="modal-content">
+        <span class="close" id="cerrarModal">&times;</span>
+        <h2>Editar Producto</h2>
+        <form id="formEditarProducto">
+            <input type="hidden" id="productoId" />
+            <label for="nombreProducto">Nombre:</label>
+            <input type="text" id="nombreProducto" required />
+            
+            <label for="precioProducto">Precio:</label>
+            <input type="number" id="precioProducto" required />
+            
+            <label for="descripcionProducto">Descripción:</label>
+            <textarea id="descripcionProducto" required></textarea>
+            
+            <label for="imagenProducto">URL de la Imagen:</label>
+            <input type="text" id="imagenProducto" required />
+            
+            <button type="submit">Actualizar</button>
+        </form>
+        </div>
+    </div>
+
+        <!-- Modal de confirmación de eliminación -->
+        <div id="EliminarProducto" class="modal" style="display:none;">
+            <div class="modal-content">
+            <span class="close" id="cerrarModalEliminar">&times;</span>
+            <h3>¿Estás seguro de que deseas eliminar este producto?</h3>
+            <h4>Esta acción no se puede deshacer.</h4>  
+            <div class="modal-actions">
+                <button id="confirmarEliminar" class="btn-danger">Eliminar</button>
+                <button id="cancelarEliminar" class="btn-secondary">Cancelar</button>
+            </div>
+            </div>
+        </div>
+        
+  
+    <footer>
+        <p>&copy; 2024 Mi Sitio Web</p>
+    </footer>
+</body>
+</html>

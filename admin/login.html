@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Iniciar sesión y registrarse</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+      <link rel="stylesheet" href="../css/admin.css">
+      <script src="../js/admin.js" defer></script>
+      <script src="../js/rainfall.js"></script>
+  </head>
+
+  <body>
+    <canvas id="rainfall"></canvas>
+
+      <header>
+        <li><a href="../index.html"><h2 class="logo">Login Administraci&oacute;n</h2></a></li>
+      </header>
+
+      <div class="btncentro">
+        <nav class="navigation">
+          <button class="bthLogin-popup">Iniciar sesión</button>
+        </nav>
+      </div>
+
+    <div class="wrapper">
+        <span class="icon-close">
+          <ion-icon name="close"></ion-icon>
+        </span>
+
+        <div class="form-box login">
+          <h2>Iniciar sesión</h2>
+          <form action="../php/login_admin.php" method="POST">
+            <div class="input-box">
+              <span class="icon">
+                <ion-icon name="person"></ion-icon>
+              </span>
+              <input type="text" name="nombre" required>
+              <label>Nombre de usuario</label>
+            </div>
+            <div class="input-box">
+              <span class="icon">
+                <ion-icon name="lock-closed"></ion-icon>
+              </span>
+              <input type="password" name="contrasena" required>
+              <label>Contraseña</label>
+            </div>
+            <button type="submit" class="bth">Iniciar sesión</button>
+            <div class="login-register">
+              <p>¿No tienes una cuenta? <a href="#" class="register-link">Registrarse</a></p>
+            </div>
+          </form>
+        </div>    
+
+        <div class="form-box register">
+          <h2>Registro</h2>
+          <form action="../php/register_admin.php" method="POST">
+            <div class="input-box">
+              <span class="icon">
+                <ion-icon name="person"></ion-icon>
+              </span>
+              <input type="text" name="nombre" required>
+              <label>Nombre de usuario</label>
+            </div>
+            <div class="input-box">
+              <span class="icon">
+                <ion-icon name="lock-closed"></ion-icon>
+              </span>
+              <input type="password" name="contrasena" required>
+              <label>Contraseña</label>
+            </div>
+            <button type="submit" class="bth">Registrarse</button>
+            <div class="login-register">
+              <p>¿Ya tienes una cuenta? <a href="#" class="login-link">Iniciar sesión</a></p>
+            </div>
+          </form>
+        </div>
+      
+    </div>
+    
+  </body>
+
+</html>

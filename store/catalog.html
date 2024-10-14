@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Catálogo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/catalogo.css">
+    
+        <script src="../js/catalog.js" defer></script>
+        <script src="../js/main.js" defer></script>
+        <script src="../js/rainfall.js"></script>
+    </head>
+<body>
+    <canvas id="rainfall"></canvas>
+    <header id="header">
+        <h1 class="logo">Mi Sitio Web</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../about.html">Acerca De</a></li>
+                <li><a href="../contact.html">Contacto</a></li>
+                <li><a href="#" id="cart-icon"><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Módulo del Carrito -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <h2>Carrito de Compras</h2>
+            <span class="close" id="close-cart">&times;</span>
+            <div id="carrito"></div>
+        </div>
+    </div>
+
+    <main>
+        <div class="catalog-container">
+            <h2>Catálogo de Productos</h2>
+            <div id="productos"></div> <!-- Aquí se mostrarán los productos -->
+        </div>
+    </main>
+
+    <footer>
+        <nav class="thelast">
+            <ul class="sci">
+                <li style="--clr: rgb(9, 117, 240);"><a href="../admin/login.html"><i class="fa-solid fa-user"></i></a></li>
+                <li style="--clr: #ff0000;"><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                <li style="--clr: #333333;"><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                <li style="--clr: #00a783;"><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2024 Mi Sitio Web</p>
+    </footer>
+
+</body>
+</html>

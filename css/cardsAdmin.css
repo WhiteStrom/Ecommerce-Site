@@ -1,0 +1,161 @@
+/* Contenedor principal para ambas secciones */
+.container {
+  display: flex;
+  justify-content: space-between; /* Ajustado para mejor distribución */
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem; /* Espacio entre secciones utilizando rem */
+  width: 100%;
+  max-width: 90vw; /* Limita el ancho máximo en relación al viewport */
+  margin: 0 auto; /* Centraliza en pantallas grandes */
+  padding: 2rem; /* Padding usando rem */
+}
+
+/* Estilos generales para ambas secciones */
+.form-section, .catalog-section {
+  padding: 1.5rem; /* Padding usando rem */
+  border-radius: 0.5rem; /* Bordes redondeados usando rem */
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1); /* Sombras suaves usando rem */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
+}
+
+.form-section:hover, .catalog-section:hover {
+  transform: translateY(-0.5rem); /* Efecto hover */
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.form-section {
+  width: 30%;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+.catalog-section {
+  width: 65%;
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  color: #444;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 50em) { /* 50em es aproximadamente 800px */
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-section, .catalog-section {
+    width: 95%;
+    margin: 1.5rem 0; /* Margen reducido usando rem */
+  }
+
+  .form-section {
+    order: -1;
+  }
+
+  .catalog-section {
+    order: 0;
+  }
+}
+
+@media (max-width: 18.75em) { /* 18.75em es aproximadamente 300px */
+  .container {
+    flex-direction: column;
+    display: block;
+  }
+
+  .form-section, .catalog-section {
+    width: 95%;
+    margin: 1rem 0; /* Margen reducido usando rem */
+  }
+
+  .form-section {
+    order: -1;
+  }
+
+  .catalog-section {
+    order: 0;
+  }
+}
+
+/* Estilos para las tarjetas */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.7rem; /* Espacio reducido entre tarjetas usando rem */
+}
+
+.card {
+  flex: 1 1 calc(25% - 1rem); /* Reduce el espacio entre las tarjetas usando rem */
+  min-width: 15rem; /* Flexibilidad con min-width usando rem */
+  max-width: 20rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1); /* Sombras suaves usando rem */
+  border-radius: 0.625rem; /* Bordes redondeados usando rem */
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-0.5rem); /* Efecto hover usando rem */
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.card-background {
+  height: 10rem; /* Altura ajustada usando rem */
+  background-size: contain; /* Mejor ajuste para imágenes */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card-header {
+  padding: 0.5rem; /* Padding usando rem */
+  background-color: #222;
+  color: #f9f9f9;
+}
+
+.card-header .nombre {
+  font-size: 1.125rem; /* Tamaño de fuente usando rem */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #ffcc00;
+}
+
+.card-content {
+  padding: 1rem; /* Padding usando rem */
+  color: #555;
+}
+
+.card-content .precio {
+  font-size: 1rem; /* Tamaño de fuente usando rem */
+  font-weight: bold;
+  color: #e73c3c;
+}
+
+.card-content .descripcion {
+  font-size: 0.875rem; /* Tamaño de fuente usando rem */
+  color: #777;
+}
+
+.card-footer {
+  padding: 0.5rem; /* Padding usando rem */
+  background-color: #f7f7f7;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+.card-footer button {
+  background-color: #337ab7;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem; /* Padding usando rem */
+  font-size: 1rem; /* Tamaño de fuente usando rem */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card-footer button:hover {
+  background-color: #23527c;
+}

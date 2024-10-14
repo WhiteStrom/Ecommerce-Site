@@ -1,0 +1,278 @@
+:root {
+  --primary-color: #2175f5;
+  --secondary-color: #fff;
+  --font-family: 'Poppins', sans-serif;
+  --accent-color: #e74c3c;
+  --bg-color: #f8f8f8;
+  --border-radius: 8px; /* Reducción del borde */
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+  --highlight-color: #f1f1f1;
+  --modal-shadow: -2px 0 15px rgba(0, 0, 0, 0.3);
+  --transition-time: 0.2s; /* Animaciones más rápidas */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  line-height: 1.5; /* Ajuste de line-height */
+}
+
+/* Estilos del ícono del carrito */
+#cart-icon {
+  position: relative;
+  cursor: pointer;
+  font-size: 1.5rem; /* Tamaño reducido */
+  color: var(--primary-color);
+  transition: color var(--transition-time) ease;
+}
+
+#cart-icon:hover {
+  color: var(--accent-color);
+}
+
+#cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  font-size: 0.8rem;
+  padding: 3px 8px; /* Reducido para ajustarse a un icono más pequeño */
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+  transition: transform var(--transition-time) ease;
+}
+
+#cart-count:hover {
+  transform: scale(1.1);
+}
+
+/* Estilos del carrito modal */
+#cart-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px; /* Más pequeño */
+  height: 100%;
+  background-color: var(--secondary-color);
+  box-shadow: var(--modal-shadow);
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 1000;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+#cart-modal.show {
+  transform: translateX(0);
+}
+
+#close-cart {
+  background-color: transparent;
+  border: none;
+  font-size: 1.6rem; /* Tamaño reducido */
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 15px; /* Alineación ajustada */
+  color: var(--accent-color);
+  transition: color var(--transition-time) ease;
+}
+
+#close-cart:hover {
+  color: var(--primary-color);
+}
+
+.cart-content {
+  padding: 4%; /* Reducción del padding */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--bg-color);
+  border-radius: var(--border-radius);
+}
+
+.cart-content h2 {
+  font-size: 1.6rem; /* Tamaño de texto reducido */
+  color: var(--primary-color);
+  text-align: center;
+  border-bottom: 2px solid var(--accent-color); /* Líneas más finas */
+  padding: 10px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0; /* Ajustado el padding */
+  border-bottom: 1px solid #ddd;
+  transition: background-color var(--transition-time) ease;
+}
+
+.cart-item img {
+  width: 60px; /* Tamaño de imagen más pequeño */
+  height: 60px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: transform var(--transition-time) ease;
+}
+
+.cart-item div {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.cart-item h4 {
+  font-size: 1rem; /* Texto más pequeño */
+  color: #333;
+  margin: 1%;
+}
+
+.cart-item p {
+  font-size: 1rem; /* Texto más pequeño */
+  font-weight: bold;
+  color: var(--accent-color);
+  text-align: right;
+}
+
+.cart-total {
+  font-size: 1.4rem; /* Total más pequeño */
+  font-weight: bold;
+  padding: 15px;
+  text-align: right;
+  margin-top: auto;
+  border-top: 1px solid #ddd;
+}
+
+#checkout-btn {
+  background-color: var(--primary-color);
+  color: #fff;
+  width: 100%;
+  padding: 14px; /* Botón más compacto */
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: background-color var(--transition-time) ease, transform var(--transition-time) ease;
+  margin-top: 15px;
+}
+
+#checkout-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Efecto hover más sutil */
+}
+
+/* Distribución y estilos adicionales */
+.cart-item div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  #cart-modal {
+    width: 90%; /* Modal responsivo más pequeño */
+  }
+
+  .cart-item img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .cart-content h2 {
+    font-size: 1.4rem;
+  }
+
+  #checkout-btn {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
+/* Estilos del catálogo de productos */
+.catalog-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+#productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Espacio entre productos reducido */
+  justify-content: center;
+}
+
+.producto {
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius);
+  width: calc(25% - 15px); /* Tamaño de producto más compacto */
+  box-shadow: var(--box-shadow);
+  transition: transform var(--transition-time) ease;
+  text-align: center;
+  padding: 10px; /* Reducción de padding */
+}
+
+.producto img {
+  width: 100%;
+  height: 180px; /* Altura reducida */
+  object-fit: cover;
+}
+
+.producto h3 {
+  font-size: 1.1rem; /* Texto más pequeño */
+  color: #333;
+  margin: 10px 0;
+}
+
+.producto p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.producto .precio {
+  font-size: 1rem; /* Texto reducido */
+  color: var(--primary-color);
+  margin: 8px 0;
+}
+
+.producto input[type="submit"] {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 8px 16px; /* Botón más compacto */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color var(--transition-time) ease;
+}
+
+.producto input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Responsividad */
+@media (max-width: 1024px) {
+  .producto {
+    width: calc(33.333% - 15px); /* Ajuste para tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .producto {
+    width: calc(50% - 15px); /* Ajuste para pantallas medianas */
+  }
+}
+
+@media (max-width: 480px) {
+  .producto {
+    width: 100%; /* Ajuste para móviles */
+  }
+}
